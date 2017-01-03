@@ -1,11 +1,16 @@
 <p><% if current_user %>
-    Signed in as
-    <%= current_user.username %>
+    Signed in as <br>
+    <%= image_tag current_user.avatar.url(:medium) %> <br>
+    <%= current_user.username %> <br>
+    Joined:
+    <%= current_user.created_at %>
 <li>
     <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+    <br>
+    <%= link_to 'Edit Profile', edit_user_registration_path %>
 </li>
 <% else %>
 <%= link_to 'Login', '/login' %>
-|
+
 <%= link_to 'Signup', '/signup' %>
 <% end %></p>

@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170103202312) do
 
   create_table "cities", force: :cascade do |t|
@@ -34,8 +33,7 @@ ActiveRecord::Schema.define(version: 20170103202312) do
     t.datetime "updated_at", null: false
     t.integer  "city_id"
     t.index ["city_id"], name: "index_posts_on_city_id"
-=======
-ActiveRecord::Schema.define(version: 20170103192357) do
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -54,7 +52,6 @@ ActiveRecord::Schema.define(version: 20170103192357) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
->>>>>>> 89d1b8db4bb6959ae041576c45622d2f01ffcf9b
   end
 
 end

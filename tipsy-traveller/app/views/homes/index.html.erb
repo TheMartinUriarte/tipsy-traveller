@@ -1,10 +1,11 @@
 <h2><em>The only way to travel</em></h2>
+
 <p><% if current_user %>
     Signed in as <br>
     <%= image_tag current_user.avatar.url(:medium) %> <br>
     <%= current_user.username %> <br>
     Joined:
-    <%= current_user.created_at %>
+    <%= current_user.created_at.strftime("%m/%d/%Y") %>
 <li>
     <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
     <br>

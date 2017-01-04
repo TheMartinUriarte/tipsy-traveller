@@ -7,7 +7,7 @@
                     <hr>
                     <% @city.posts.each do |post| %>
                     <p>
-                    <strong><%= post.user_id %> </strong>
+                    <strong><%= post.user.username %> </strong>
                     <%= post.text %>
                     </p>
 

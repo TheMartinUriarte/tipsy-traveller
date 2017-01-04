@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170104175328) do
+ActiveRecord::Schema.define(version: 20170104190739) do
 
   create_table "cities", force: :cascade do |t|
     t.float    "longitude"
@@ -18,9 +18,13 @@ ActiveRecord::Schema.define(version: 20170104175328) do
     t.string   "name"
     t.text     "description"
     t.string   "address"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "post_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["post_id"], name: "index_cities_on_post_id"
   end
 
@@ -30,7 +34,7 @@ ActiveRecord::Schema.define(version: 20170104175328) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string   "text"
+    t.text     "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "city_id"

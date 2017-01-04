@@ -31,6 +31,7 @@ class CitiesController < ApplicationController
   def update
     city_id = params[:id]
     city = City.find_by(id: city_id)
+
     if city.update(city_params)
       redirect_to city_path(city)
     else

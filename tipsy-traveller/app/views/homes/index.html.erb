@@ -6,10 +6,17 @@
     <%= current_user.username %> <br>
     Joined:
     <%= current_user.created_at.strftime("%m/%d/%Y") %>
+    <% current_user.posts.each do |post| %>
+        <p>
+            <%= post.text %>
+        </p>
+        <hr>
+    <% end %>
 <li>
     <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
     <br>
     <%= link_to 'Edit Profile', edit_user_registration_path %>
+    <%= link_to 'Show Cities', cities_index_path %>
 </li>
 <% else %>
 <%= link_to 'Login', '/login' %>

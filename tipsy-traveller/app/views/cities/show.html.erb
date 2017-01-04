@@ -10,7 +10,9 @@
                   <hr>
                   <h2><strong>City: </strong><%= @city.address %> </h2>
                   <hr />
-                  <p><%= link_to "edit this city", edit_city_path(@city) %></p>
+
+                  <p><%= link_to "Edit This City", edit_city_path(@city) %></p>
+                  <p><%= link_to "show post for this city", city_posts_path(@city) %></p>
                 </div>
             </div>
         </div>

@@ -1,2 +1,26 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class="roster-display">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="intro">
+                  <h1>zThe Great city of  <%= @city.name %></h1>
+                    <hr>
+                    <% @city.posts.each do |post| %>
+                    <p>
+                    <strong><%= post.user_id %> </strong>
+                    <%= post.text %>
+                    </p>
+
+
+                    <hr>
+                      <% end %>
+
+                    <%= link_to "create post for this city", new_city_post_path(@city) %>
+                    <hr>
+                    <%= link_to "city page", city_path(@city) %>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

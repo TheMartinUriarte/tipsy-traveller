@@ -25,11 +25,18 @@ class CitiesController < ApplicationController
 
   def edit
     city_id = params[:id]
-
-    @city = City.find_by_id(city_id)
+    @city = City.find_by(id: city_id)
   end
 
   def update
+    city_id = params[:id]
+    city = City.find_by(id: city_id)
+    if city.update(city_params)
+      redirect_to city_path(city)
+    else
+      flash[:error] = city.errors.full_messages.join(", ")
+      redirect_to edit_city_path(city)
+    end
   end
 
   def destroy

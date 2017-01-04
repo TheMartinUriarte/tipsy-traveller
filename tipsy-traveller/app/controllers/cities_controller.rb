@@ -1,4 +1,7 @@
 class CitiesController < ApplicationController
+
+
+
   def index
     @cities = City.all
   end
@@ -37,10 +40,12 @@ class CitiesController < ApplicationController
     else
       flash[:error] = city.errors.full_messages.join(", ")
       redirect_to edit_city_path(city)
+
     end
   end
 
   def destroy
+
     @city = City.delete
   end
 
@@ -48,4 +53,5 @@ class CitiesController < ApplicationController
   def city_params
     params.require(:city).permit(:name, :address, :description, :longitude, :lattitude, :image)
   end
+
 end

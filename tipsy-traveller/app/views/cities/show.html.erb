@@ -4,11 +4,15 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="intro">
 
-                  <h2><strong>Name: </strong><%= @city.name %> </h2>
+                  <h2><strong>City Name: </strong><%= @city.name %> </h2>
                   <hr>
-                  <h2><strong>City: </strong><%= @city.description %> </h2>
+                  <h2><strong>Description: </strong><%= @city.description %> </h2>
                   <hr>
-                  <h2><strong>City: </strong><%= @city.address %> </h2>
+                  <h2><strong>State: </strong><%= @city.address %> </h2>
+                  <div class="city_image">
+                    <%= image_tag @city.image.url %>
+                  </div>
+
                   <hr />
 
                   <p><%= link_to "Edit This City", edit_city_path(@city) %></p>

@@ -1,4 +1,5 @@
 <div class="roster-display">
+
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -14,15 +15,14 @@
                     </p>
 
 
-                    <hr>
-                      <% end %>
-
-                    <%= link_to "create post for this city", new_city_post_path(@city) %>
-                    <hr>
-                    <%= link_to "city page", city_path(@city) %>
-
-                </div>
-            </div>
+            <hr>
+          <% end %>
+          
+          <%= link_to "create post for this city", new_city_post_path(@city) %>
+          <hr>
+          <%= link_to "city page", city_path(@city) %>
         </div>
+      </div>
     </div>
+  </div>
 </div>
